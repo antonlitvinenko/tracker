@@ -2,7 +2,8 @@
  * Module dependencies.
  */
 
-var express = require('express');
+var express = require('express'),
+  Resource = require('express-resource');
 
 var app = module.exports = express.createServer();
 
@@ -29,40 +30,17 @@ app.configure('production', function() {
 
 // Routes
 
-app.get('/', function(req, res) {
-    res.render('index', {
-        title: 'Express'
-    });
+app.resource(require('./controllers/root'));
+
+app.resource('tasks',require('./controllers/task'));
+
+/*
+// this url? really?
+app.put('/tasks/completed/:id', function(req, res) {  
+  datastore[req.params.id].completed = true;
+  res.send({});
 });
-
-app.use(express.bodyParser());
-
-function addNewTask(title) {
-    datastore.push({id: datastore.length, title: title, completed: false});
-}
-
-app.post('/tasks', function(req, res) {
-    addNewTask(req.body.title);
-    okWithJSON(res, datastore.length - 1);
-});
-
-app.get('/tasks', function(req, res) {
-    okWithJSON(res, datastore);
-});
-
-app.get('/tasks/:id', function(req, res) {
-    okWithJSON(res, datastore[req.params.id]);
-});
-
-app.put('/tasks/completed/:id', function(req, res) {
-    datastore[req.params.id].completed = true;
-    okWithJSON(res, {});
-});
-
-function okWithJSON(res, data) {
-    res.writeHead(200, {'Content-type':'application/json'});
-    res.end(JSON.stringify(data));
-}
+*/
 
 app.listen(1337);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

@@ -3,6 +3,7 @@
  */
 
 var express = require('express');
+require('./models/task');
 
 var app = module.exports = express.createServer();
 
@@ -37,16 +38,25 @@ app.get('/', function(req, res) {
 
 app.use(express.bodyParser());
 
+function addNewTask(title) {
+    datastore.push({id: datastore.length, title: title, completed: false});
+}
+
 app.post('/tasks', function(req, res) {
-    datastore.push(req.body.title);
-    okWithJSON(res, datastore.length-1);
+    addNewTask(req.body.title);
+    okWithJSON(res, datastore.length - 1);
 });
 
 app.get('/tasks', function(req, res) {
     okWithJSON(res, datastore);
 });
 
-app.put('/tasks/:id', function(req, res) {
+app.get('/tasks/:id', function(req, res) {
+    okWithJSON(res, datastore[req.params.id]);
+});
+
+app.put('/tasks/completed/:id', function(req, res) {
+    datastore[req.params.id].completed = true;
     okWithJSON(res, {});
 });
 

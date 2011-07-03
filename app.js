@@ -3,7 +3,6 @@
  */
 
 var express = require('express');
-require('./models/task');
 
 var app = module.exports = express.createServer();
 

@@ -5,5 +5,7 @@
   , "dependencies": {
       "express": "2.4.0"
     , "jade": ">= 0.0.1"
+    , "vows": ">= 0.5.8"
+    , "express-resource": ">= 0.2.1"
   }
 }

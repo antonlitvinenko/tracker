@@ -1,3 +1,13 @@
+/*
+GET     /tasks              ->  index
+GET     /tasks/new          ->  new
+POST    /tasks              ->  create
+GET     /tasks/:task       ->  show
+GET     /tasks/:task/edit  ->  edit
+PUT     /tasks/:task       ->  update
+DELETE  /tasks/:task       ->  destroy
+*/
+
 //var Task = require('../models/task');
 var tasks = [];
 
@@ -7,31 +17,18 @@ exports.index = function(q, r){
   r.send(tasks);
 };
 
-// ???
-/*exports.new = function(q, r){
-  console.log('new task');
-  r.send('new task');
-};*/
-
-// create
-exports.create = function(q, r){
-  console.log('create task %s', q.body.title);
-  tasks.push({id: tasks.length, title: q.body.title, completed: false});
-  r.send({task:tasks.length-1});
-};
-
 // Read 1
 exports.show = function(q, r){
   console.log('show task %s', q.params.task);
   r.send(tasks[q.params.task]);
 };
 
-// ???
-/*exports.edit = function(q, r){
-  console.log('edit task %s', q.params.task);
-  r.send('edit task ' + q.params.task);
+// Create
+exports.create = function(q, r){
+  console.log('create task %s', q.body.title);
+  tasks.push({id: tasks.length, title: q.body.title, completed: false});
+  r.send({task:tasks.length-1});
 };
-*/
 
 // Update
 exports.update = function(q, r){

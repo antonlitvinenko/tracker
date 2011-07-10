@@ -5,7 +5,20 @@
 var express = require('express');
 var resource = require('express-resource');
 
-var tasks = require('./controllers/tasks.js')
+var tasks = require('./models/tasks').tasks();
+
+var mongoose = require('mongoose');
+var db = mongoose.connect('mongodb://localhost/tracker');
+
+var Schema = mongoose.Schema
+  , ObjectId = Schema.ObjectId;
+
+var Task = new Schema({
+    author    : ObjectId
+  , title     : String
+});
+
+
 
 
 var app = module.exports = express.createServer();

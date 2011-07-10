@@ -47,7 +47,9 @@ app.post('/tasks', function(req, res) {
 });
 
 app.get('/tasks', function(req, res) {
-    okWithJSON(res, tasks.getAll());
+    tasks.getAll(function(tasks){
+        okWithJSON(res, tasks);
+    });
 });
 
 app.get('/tasks/:id', function(req, res) {

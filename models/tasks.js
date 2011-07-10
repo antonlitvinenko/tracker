@@ -23,9 +23,12 @@ exports.tasks = function() {
             });
         },
 
-        getAll: function() {
+        getAll: function(callback) {
             var Task = mongoose.model('Task');
-
+            //console.log(Task.collection);
+            Task.find({}, function(err, tasks){
+                if (!err) callback(tasks);
+            })
             return datastore;
         }
     }

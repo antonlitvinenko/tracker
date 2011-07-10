@@ -41,9 +41,8 @@ app.get('/', function(req, res) {
 
 
 app.post('/tasks', function(req, res) {
-    tasks.create(req.body.title, function(error){
-        // todo do how to get id?
-        okWithJSON(res, lastId);
+    tasks.create(req.body.title, function(taskId){
+        okWithJSON(res, taskId);
     });
 });
 

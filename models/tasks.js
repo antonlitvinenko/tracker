@@ -18,10 +18,14 @@ exports.tasks = function() {
             var Task = mongoose.model('Task');
             var task = new Task();
             task.title = title;
-            task.save(callback);
+            task.save(function(err,task){
+                if (!err) callback(task.get('_id'));
+            });
         },
 
         getAll: function() {
+            var Task = mongoose.model('Task');
+
             return datastore;
         }
     }

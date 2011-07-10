@@ -3,6 +3,7 @@
  */
 
 var express = require('express');
+
 require('./models/task');
 
 var app = module.exports = express.createServer();
@@ -55,7 +56,7 @@ app.get('/tasks/:id', function(req, res) {
     okWithJSON(res, datastore[req.params.id]);
 });
 
-app.put('/tasks/completed/:id', function(req, res) {
+app.put('/tasks/:id/completed', function(req, res) {
     datastore[req.params.id].completed = true;
     okWithJSON(res, {});
 });

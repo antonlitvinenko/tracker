@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7d7c349-a110-4545-a295-72768c863775" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/tasks.js" afterPath="$PROJECT_DIR$/models/tasks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/models/tasks-model-tests.js" afterPath="$PROJECT_DIR$/tests/models/tasks-model-tests.js" />
-    </list>
+    <list default="true" id="b7d7c349-a110-4545-a295-72768c863775" name="Default" comment="" />
     <ignored path="tracker.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -93,7 +88,7 @@
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="33" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.26782885">
+            <state line="51" column="8" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.5226537">
               <folding />
             </state>
           </provider>
@@ -111,7 +106,7 @@
       <file leaf-file-name="tasks.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/tasks.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="30" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0">
+            <state line="29" column="42" selection-start="759" selection-end="759" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -567,7 +562,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="first experiments with MongoDB &amp; Mongoose" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated tasks.getAll() to use MongoDB" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -588,6 +583,9 @@
     <MESSAGE value="added tests for &quot;add&quot; method" />
     <MESSAGE value="rewrite the tasks model definition" />
     <MESSAGE value="first experiments with MongoDB &amp; Mongoose" />
+    <MESSAGE value="fist mongoose model with some methods (probably not working)" />
+    <MESSAGE value="added MongoDB storage (Create only)" />
+    <MESSAGE value="updated tasks.getAll() to use MongoDB" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -630,14 +628,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/tasks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="30" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0">
+        <state line="29" column="42" selection-start="759" selection-end="759" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="33" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.26782885">
+        <state line="51" column="8" selection-start="1155" selection-end="1155" vertical-scroll-proportion="0.5226537">
           <folding />
         </state>
       </provider>

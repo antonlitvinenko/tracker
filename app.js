@@ -3,12 +3,12 @@
  */
 
 var express = require('express');
+var resource = require('express-resource');
 
-require('./models/task');
+var tasks = require('./controllers/tasks.js')
+
 
 var app = module.exports = express.createServer();
-
-var datastore = [];
 
 // Configuration
 
@@ -37,15 +37,11 @@ app.get('/', function(req, res) {
     });
 });
 
-app.use(express.bodyParser());
-
-function addNewTask(title) {
-    datastore.push({id: datastore.length, title: title, completed: false});
-}
 
 app.post('/tasks', function(req, res) {
-    addNewTask(req.body.title);
-    okWithJSON(res, datastore.length - 1);
+    var lastId = tasks.add(req.body.title);
+
+    okWithJSON(res, lastId);
 });
 
 app.get('/tasks', function(req, res) {

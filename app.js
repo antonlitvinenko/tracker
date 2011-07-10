@@ -45,15 +45,15 @@ app.post('/tasks', function(req, res) {
 });
 
 app.get('/tasks', function(req, res) {
-    okWithJSON(res, datastore);
+    okWithJSON(res, tasks.getAll());
 });
 
 app.get('/tasks/:id', function(req, res) {
-    okWithJSON(res, datastore[req.params.id]);
+    okWithJSON(res, tasks.getAll()[req.params.id]);
 });
 
 app.put('/tasks/:id/completed', function(req, res) {
-    datastore[req.params.id].completed = true;
+    tasks.getAll()[req.params.id].completed = true;
     okWithJSON(res, {});
 });
 

@@ -10,17 +10,6 @@ var tasks = require('./models/tasks').tasks();
 var mongoose = require('mongoose');
 var db = mongoose.connect('mongodb://localhost/tracker');
 
-var Schema = mongoose.Schema
-  , ObjectId = Schema.ObjectId;
-
-var Task = new Schema({
-    author    : ObjectId
-  , title     : String
-});
-
-
-
-
 var app = module.exports = express.createServer();
 
 // Configuration
@@ -52,9 +41,10 @@ app.get('/', function(req, res) {
 
 
 app.post('/tasks', function(req, res) {
-    var lastId = tasks.add(req.body.title);
-
-    okWithJSON(res, lastId);
+    tasks.create(req.body.title, function(error){
+        // todo do how to get id?
+        okWithJSON(res, lastId);
+    });
 });
 
 app.get('/tasks', function(req, res) {

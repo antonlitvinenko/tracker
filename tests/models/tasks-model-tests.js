@@ -9,7 +9,7 @@ var taskModel = require('../../models/tasks').tasks;
 
 (function shouldHaveOneTaskAfterAddition() {
     var tasks = taskModel();
-    tasks.add('title');
+    tasks.create('title');
 
     assert.equal(tasks.getAll().length, 1)
     assert.equal(tasks.getAll()[0].title, 'title');
@@ -18,7 +18,7 @@ var taskModel = require('../../models/tasks').tasks;
 
 (function getTaskshouldReturnExistingTask() {
     var tasks = taskModel();
-    tasks.add('title');
+    tasks.create('title');
 
     assert.equal(tasks.getAll().length, 1)
 })();
